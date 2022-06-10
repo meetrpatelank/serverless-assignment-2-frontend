@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import constants from "../constants/constants";
 
@@ -23,7 +23,7 @@ function Login() {
         axios.post(LOGIN_API, article)
             .then(response => {
                 console.log(response)
-                if (response.status == "200") {
+                if (response.status === "200") {
                     localStorage.setItem("email",formValue.email);
                     localStorage.setItem("password",formValue.password);
                     console.log(response.data.status);
