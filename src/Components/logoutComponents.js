@@ -15,7 +15,7 @@ function Logout() {
         };
         axios.post(GET_USER_API, article).then(response => {
             console.log(response);
-            if (response.status == "200") {
+            if (response.status === "200") {
                 setUserDetails(response.data.response);
             }
         });
@@ -36,7 +36,7 @@ function Logout() {
         axios.post(LOGOUT_API, article)
             .then(response => {
                 console.log(response)
-                if (response.status == "200") {
+                if (response.status === "200") {
                     localStorage.clear();
                     console.log(response.data.status);
                     window.location.href = "/home";

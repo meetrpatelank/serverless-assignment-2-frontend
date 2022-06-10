@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import constants from "../constants/constants";
 
@@ -24,7 +24,7 @@ function Register(){
         axios.post(REGISTER_API, article)
             .then(response => {
                 console.log(response)
-                if (response.status == "200") {
+                if (response.status === "200") {
                     console.log(response.data.status);
                     window.location.href = "/home";
                 }
